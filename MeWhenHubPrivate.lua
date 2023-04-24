@@ -310,6 +310,35 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/littlegui/mai
    end,
 })
 local Button = Tab:CreateButton({
+   Name = "Check TradeBanneds Peoples!(F9)",
+   Callback = function()
+   for _, player in pairs(game.Players:GetPlayers()) do
+   local tradebanned = player.tradebanned
+    if tradebanned then
+        if tradebanned.Value then
+            print(player.Name .. " is tradebanned! ")
+        end
+    end
+end
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "buy fucking e rain(3 cred)",
+   Callback = function()
+game:GetService("ReplicatedStorage").RemoteFunction:InvokeServer(66, "Animations", "Exclusive")
+   end,
+})
+local Button = Tab:CreateButton({
+   Name = "Buy Black Torso",
+   Callback = function()
+    local args = {
+    [1] = 62,
+    [2] = -1
+}
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end,
+})
+local Button = Tab:CreateButton({
    Name = "Trade Unban",
    Callback = function()
  while wait() do
@@ -322,18 +351,7 @@ local args = {
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
 end,
-local Button = Tab:CreateButton({
-   Name = "Buy Black Torso",
-   Callback = function()
-    local args = {
-    [1] = 62,
-    [2] = -1
-}
-
-game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
-end,
 })
-
 
 Rayfield:Notify({
    Title = "hi nigga comparatif or akakweanen",
@@ -349,6 +367,8 @@ Rayfield:Notify({
    },
 },
 })
+
+
 
 
 Rayfield:LoadConfiguration()

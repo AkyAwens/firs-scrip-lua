@@ -21,6 +21,11 @@ local Window = Rayfield:CreateWindow({
 	}
 })
 
+
+
+
+
+
 local Tab = Window:CreateTab("Combat", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Combat")
 local Button = Tab:CreateButton({
@@ -151,10 +156,9 @@ _G.FullBrightEnabled = not _G.FullBrightEnabled
    -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
-
 local Button = Tab:CreateButton({
-   Name = "Esp Box(soon toggleable)",
-   Callback = function()
+   Name = "Esp Box",
+   Callback = function(Value)
 -- settings
 local settings = {
    defaultcolor = Color3.fromRGB(255,0,0),
@@ -261,6 +265,8 @@ then
 end)
    end,
 })
+
+
 local Tab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 local Section = Tab:CreateSection("Misc")
 local Button = Tab:CreateButton({
@@ -352,6 +358,15 @@ game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
 end,
 })
+local Button = Tab:CreateButton({
+   Name = "Remove Glass",
+   Callback = function()
+ for i,v in next, getconnections(workspace.glass.Changed) do v:Disable() end
+for i,v in next, getconnections(workspace.ChildRemoved) do v:Disable() end
+workspace.glass:Destroy()
+end,
+})
+
 
 Rayfield:Notify({
    Title = "hi nigga comparatif or akakweanen",

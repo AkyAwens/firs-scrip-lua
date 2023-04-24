@@ -1,7 +1,7 @@
 getgenv().SecureMode = true
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 local Window = Rayfield:CreateWindow({
-	Name = "MeWhenHub ui remake",
+	Name = "MeWhenHub BETA VERSION EXCLUSIVE",
 	LoadingTitle = "wait fucking noob",
 	LoadingSubtitle = "by akawakaken for comprtif",
 	ConfigurationSaving = {
@@ -322,8 +322,18 @@ local args = {
 game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
 end
 end,
+local Button = Tab:CreateButton({
+   Name = "Buy Black Torso",
+   Callback = function()
+    local args = {
+    [1] = 62,
+    [2] = -1
+}
 
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer(unpack(args))
+end,
 })
+
 
 Rayfield:Notify({
    Title = "hi nigga comparatif or akakweanen",
